@@ -1,7 +1,7 @@
 lsp-ocaml
 ==============
 
-Ocaml/Reason support for lsp-mode using [ocaml-language-server](https://github.com/freebroccolo/ocaml-language-server).
+OCaml/Reason support for lsp-mode using [ocaml-language-server](https://github.com/freebroccolo/ocaml-language-server).
 
 ## Installation
 

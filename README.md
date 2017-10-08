@@ -22,6 +22,9 @@ Install the package `lsp-ocaml`
 ## Enabling `lsp-ocaml`
 
 ```emacs-lisp
+(require 'lsp-mode)
+(require 'lsp-ocaml)
+
 (add-hook 'tuareg-mode-hook #'lsp-mode)
 (add-hook 'caml-mode-hook #'lsp-mode)
 (add-hook 'reason-mode-hook #'lsp-mode) ;; for Reason support

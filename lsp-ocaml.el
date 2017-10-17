@@ -4,8 +4,8 @@
 
 ;; Author: Antonio N. Monteiro <anmonteiro@gmail.com>
 ;; Version: 1.0
-;; Package-Requires: ((lsp-mode "2.0"))
-;; Keywords: ocaml reason lsp
+;; Package-Requires: ((emacs "24") (lsp-mode "2.0"))
+;; Keywords: languages, ocaml, reason, lsp
 ;; URL: https://github.com/anmonteiro/lsp-ocaml
 
 ;; This program is free software; you can redistribute it and/or modify

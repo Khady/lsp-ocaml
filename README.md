@@ -25,9 +25,9 @@ Install the package `lsp-ocaml`
 (require 'lsp-mode)
 (require 'lsp-ocaml)
 
-(add-hook 'tuareg-mode-hook #'lsp-mode)
-(add-hook 'caml-mode-hook #'lsp-mode)
-(add-hook 'reason-mode-hook #'lsp-mode) ;; for Reason support
+(add-hook 'tuareg-mode-hook #'lsp-ocaml-enable)
+(add-hook 'caml-mode-hook #'lsp-ocaml-enable)
+(add-hook 'reason-mode-hook #'lsp-ocaml-enable) ;; for Reason support
 ```
 
 You also need

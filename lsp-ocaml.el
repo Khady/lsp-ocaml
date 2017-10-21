@@ -40,19 +40,8 @@ The current directory is assumed to be the OCaml project’s root otherwise."
 	      (or (seq-some (lambda (file) (locate-dominating-file default-directory file)) project-types)
 	          default-directory)))))
 
-(defconst lsp-ocaml-reason-major-modes
-  '(tuareg-mode caml-mode))
-
-(dolist (mode lsp-ocaml-reason-major-modes)
-  (lsp-define-stdio-client mode "OCaml" 'stdio
-	                         'lsp-ocaml--get-root
-	                         "OCaml Language Server"
-	                         '("ocaml-language-server" "--stdio")))
-
-(lsp-define-stdio-client 'reason-mode "Reason" 'stdio
-	                       'lsp-ocaml--get-root
-	                       "OCaml Language Server"
-	                       '("ocaml-language-server" "--stdio"))
+(lsp-define-stdio-client lsp-ocaml "ocaml" #'lsp-ocaml--get-root
+			 '("ocaml-language-server" "--stdio"))
 
 (provide 'lsp-ocaml)
 ;;; lsp-ocaml.el ends here

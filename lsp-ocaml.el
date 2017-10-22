@@ -34,7 +34,7 @@
   "Retrieves the root directory of the OCaml project root if available.
 The current directory is assumed to be the OCaml project’s root otherwise."
   (cond
-   ((and (bound-and-true-p 'projectile-mode) (projectile-project-p)) (projectile-project-root))
+   ((and (bound-and-true-p projectile-mode) (projectile-project-p)) (projectile-project-root))
    ((vc-backend default-directory) (expand-file-name (vc-root-dir)))
    (t (let ((project-types '("opam" ".merlin" "package.json")))
 	      (or (seq-some (lambda (file) (locate-dominating-file default-directory file)) project-types)

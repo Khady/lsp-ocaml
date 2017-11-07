@@ -1,9 +1,14 @@
-lsp-ocaml
-==============
+# lsp-ocaml
+[![MELPA](http://melpa.org/packages/lsp-ocaml-badge.svg)](http://melpa.org/#/lsp-ocaml)
+[![MELPA Stable](http://melpa-stable.milkbox.net/packages/lsp-ocaml-badge.svg)](http://stable.melpa.org/#/lsp-ocaml)
 
 OCaml/Reason support for lsp-mode using [ocaml-language-server](https://github.com/freebroccolo/ocaml-language-server).
 
 ## Installation
+
+### From MELPA
+
+Install the package `lsp-ocaml`
 
 ### From source
 
@@ -14,10 +19,6 @@ suitable paths, and add them to your load path:
 (add-to-list 'load-path "<path to lsp-mode>")
 (add-to-list 'load-path "<path to lsp-ocaml>")
 ```
-
-### From MELPA
-
-Install the package `lsp-ocaml`
 
 ## Enabling `lsp-ocaml`
 

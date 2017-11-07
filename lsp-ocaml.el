@@ -41,7 +41,19 @@ The current directory is assumed to be the OCaml project’s root otherwise."
 	          default-directory)))))
 
 (lsp-define-stdio-client lsp-ocaml "ocaml" #'lsp-ocaml--get-root
-			 '("ocaml-language-server" "--stdio"))
+			 '("ocaml-language-server" "--stdio")
+       :language-id-fn (lambda (buffer)
+                         (let ((x (buffer-file-name buffer)))
+                           (cond
+                            ((or (string-suffix-p ".re" x)
+                                 (string-suffix-p ".rei" x))
+                             "reason")
+
+                            ((or (string-suffix-p ".ml" x)
+                                 (string-suffix-p ".mli" x)
+                                 (string-suffix-p ".mll" x)
+                                 (string-suffix-p ".mly" x))
+                             "ocaml")))))
 
 (provide 'lsp-ocaml)
 ;;; lsp-ocaml.el ends here

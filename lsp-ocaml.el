@@ -36,8 +36,11 @@ The current directory is assumed to be the OCaml project’s root otherwise."
   (cond
    ((and (bound-and-true-p projectile-mode) (projectile-project-p)) (projectile-project-root))
    ((vc-backend default-directory) (expand-file-name (vc-root-dir)))
-   (t (let ((project-types '("opam" ".merlin" "package.json")))
-	      (or (seq-some (lambda (file) (locate-dominating-file default-directory file)) project-types)
+   (t (let ((project-types '("jbuild-workspace" "bsconfig.json" "package.json")))
+	      (or (locate-dominating-file default-directory
+                                    (lambda (dir)
+                                      (directory-files dir nil "\.opam")))
+            (seq-some (lambda (file) (locate-dominating-file default-directory file)) project-types)
 	          default-directory)))))
 
 (lsp-define-stdio-client lsp-ocaml "ocaml" #'lsp-ocaml--get-root
